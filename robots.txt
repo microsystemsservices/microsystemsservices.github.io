@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://microsystemsservices.github.io/sitemap.xml
