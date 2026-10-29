@@ -180,7 +180,7 @@ footer{border-top:1px solid rgba(255,255,255,.08)}
 .submit:hover svg{transform:translateX(3px)}
 .submit:disabled{opacity:.78;cursor:wait;transform:none}
 .form-status{padding:13px 14px;margin:15px 0 0;border:1px solid #a7e6d7;border-radius:10px;background:#effcf8;color:#075f52;font-size:13px;line-height:1.6}
-.form-status[hidden]{display:none}
+.form-status[hidden]{display:none}.form-status-error{background:#fff5f4;border-color:#f1c1bd;color:#8c2420}
 .privacy{padding-top:13px;border-top:1px solid #e8eef4}
 .contact .notice{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.15);color:#dce9f3;box-shadow:none}
 .contact .contactbox>div:first-child>p{overflow-wrap:anywhere}
@@ -307,9 +307,41 @@ footer{padding-top:35px;padding-bottom:35px}
   }
   var form = document.getElementById('callback-form');
   if (form) {
-    form.addEventListener('submit', function(){
+    form.addEventListener('submit', async function(event){
+      event.preventDefault();
       var button = form.querySelector('button[type="submit"]');
-      if (button) { button.disabled = true; button.querySelector('span').textContent = 'SENDING REQUEST…'; }
+      var label = button ? button.querySelector('span') : null;
+      var status = document.getElementById('form-status');
+      if (button) { button.disabled = true; if (label) label.textContent = 'SENDING REQUEST…'; }
+      if (status) { status.hidden = true; status.className = 'form-status'; status.textContent = ''; }
+      try {
+        var response = await fetch('https://formsubmit.co/ajax/srvcplat@gmail.com', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        var result = await response.json();
+        if (!response.ok || result.success === 'false' || result.success === false) {
+          throw new Error(result.message || result.error || 'The form service could not accept this request.');
+        }
+        if (status) {
+          status.hidden = false;
+          status.className = 'form-status';
+          status.textContent = result.message || 'Your request was sent to our form service. If this is the first submission, the inbox owner may need to confirm the activation email before future messages can be delivered.';
+          status.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center'});
+        }
+        form.reset();
+      } catch (error) {
+        if (status) {
+          status.hidden = false;
+          status.className = 'form-status form-status-error';
+          status.textContent = 'We could not confirm delivery of your request. Please email srvcplat@gmail.com or call 1-(425)-559-9290 directly. Details: ' + (error && error.message ? error.message : 'network error');
+          status.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center'});
+        }
+      } finally {
+        if (button) button.disabled = false;
+        if (label) label.textContent = 'REQUEST CALLBACK';
+      }
     });
   }
 })();
