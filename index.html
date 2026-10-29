@@ -144,6 +144,51 @@ footer{border-top:1px solid rgba(255,255,255,.08)}
 @media(max-width:800px){.value-inner{padding:18px 24px;gap:14px}.value-icon{flex-basis:38px;width:38px;height:38px}.value-item{gap:9px}}
 @media(max-width:680px){.value-inner{grid-template-columns:1fr;gap:14px;padding:18px 22px}.value-item{padding:3px 0}.value-item small{font-size:12px}#services .card{min-height:0}.hero:before{background-size:32px 32px}.navlinks{flex-wrap:wrap;justify-content:flex-end;gap:8px 12px}.navlinks a{font-size:12px}.brand{gap:8px}}
 @media(prefers-reduced-motion:reduce){.navlinks a:after{transition:none}}
+
+/* Premium conversion and polish layer */
+::selection{background:#b9fff5;color:#081426}
+.top{min-height:42px}
+.nav{min-height:82px}
+.hero{padding-top:clamp(76px,9vw,130px);padding-bottom:clamp(76px,9vw,130px)}
+.hero-in{gap:clamp(36px,7vw,100px)}
+.hero h1{max-width:760px;text-wrap:balance}
+.hero p{max-width:650px}
+.hero .btn{min-height:52px;padding-inline:23px}
+.primary{background:linear-gradient(120deg,#b9fff5,#79e6df);box-shadow:0 10px 26px rgba(102,227,220,.14),inset 0 1px 0 rgba(255,255,255,.75)}
+.call{border:1px solid rgba(255,255,255,.17);background:linear-gradient(145deg,rgba(255,255,255,.105),rgba(255,255,255,.045));box-shadow:0 32px 80px rgba(0,0,0,.23),inset 0 1px 0 rgba(255,255,255,.14)}
+.call small{display:inline-flex;align-items:center;gap:9px}
+.call small:before{content:"";width:7px;height:7px;border-radius:50%;background:#80f1d9;box-shadow:0 0 0 4px rgba(128,241,217,.12),0 0 15px rgba(128,241,217,.5)}
+.callnum{font-variant-numeric:tabular-nums;letter-spacing:-1px}
+.section{scroll-margin-top:96px}
+.section h2{text-wrap:balance}
+#services .card{padding:30px;min-height:245px}
+#services .card h3{line-height:1.3}
+.value-strip{border-top:1px solid rgba(255,255,255,.65)}
+.value-inner{padding-top:26px;padding-bottom:26px}
+.form{position:relative;overflow:hidden;border:1px solid #e1eaf2;box-shadow:0 28px 75px rgba(0,0,0,.2),inset 0 1px 0 #fff}
+.form:before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:linear-gradient(90deg,#0e9f9a,#66e3dc,#8b9cff)}
+.form-kicker{display:flex;align-items:center;gap:8px;color:#087f7b;font-size:10px;letter-spacing:1.8px;font-weight:900;margin:0 0 11px}
+.form-kicker-dot{width:7px;height:7px;background:#0e9f9a;border-radius:50%;box-shadow:0 0 0 4px #e1f8f5}
+.form h3{margin-bottom:9px;font-size:clamp(23px,2.5vw,29px)}
+.form-intro{font-size:13px;color:#687b8e;line-height:1.7;margin:0 0 25px}
+.optional{font-weight:500;color:#718194}
+.form input,.form select,.form textarea{border-color:#dbe5ee;background:#f9fbfe;border-radius:11px;min-height:51px}
+.form input:focus,.form select:focus,.form textarea:focus{background:#fff;box-shadow:0 0 0 4px rgba(14,159,154,.11)}
+.form textarea{min-height:118px}
+.submit{display:flex;align-items:center;justify-content:center;gap:12px;min-height:54px;border-radius:11px;background:linear-gradient(110deg,#087f7b,#0e9f9a);box-shadow:0 12px 24px rgba(14,159,154,.2)}
+.submit svg{width:19px;height:19px;transition:transform .2s ease}
+.submit:hover svg{transform:translateX(3px)}
+.submit:disabled{opacity:.78;cursor:wait;transform:none}
+.form-status{padding:13px 14px;margin:15px 0 0;border:1px solid #a7e6d7;border-radius:10px;background:#effcf8;color:#075f52;font-size:13px;line-height:1.6}
+.form-status[hidden]{display:none}
+.privacy{padding-top:13px;border-top:1px solid #e8eef4}
+.contact .notice{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.15);color:#dce9f3;box-shadow:none}
+.contact .contactbox>div:first-child>p{overflow-wrap:anywhere}
+footer{padding-top:35px;padding-bottom:35px}
+.footerlinks{margin-top:12px}
+@media(max-width:680px){.nav{align-items:flex-start;gap:12px}.navlinks{max-width:52%;padding-top:4px}.hero{padding-top:62px;padding-bottom:64px}.hero-in{gap:30px}#services .card{padding:24px}.form{border-radius:17px}.call{border-radius:19px}}
+@media(hover:hover){.btn,.submit,.card,.step{will-change:transform}}
+@media(prefers-reduced-motion:reduce){.submit svg{transition:none}}
 </style>
 </head>
 <body>
@@ -151,11 +196,12 @@ footer{border-top:1px solid rgba(255,255,255,.08)}
   <span>Trusted Business IT &amp; Technology Services</span>
   <div><a href="mailto:srvcplat@gmail.com">srvcplat@gmail.com</a> &nbsp;|&nbsp; <a href="tel:+14255599290">Call Now: 1-(425)-559-9290</a></div>
 </div>
-<a class="skip-link" href="#services">Skip to content</a>
+<a class="skip-link" href="#main">Skip to content</a>
 <nav class="nav" aria-label="Main navigation">
   <div class="brand"><span class="brandmark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 23V9l7 8 4-5 4 5 7-8v14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 25h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="7" r="2" fill="#9AE6DF"/></svg></span><span>MICRO SYSTEMS SERVICES<small>BUSINESS TECHNOLOGY SOLUTIONS</small></span></div>
   <div class="navlinks"><a href="#services">Services</a><a href="#process">How It Works</a><a href="#contact">Contact</a></div>
 </nav>
+<main id="main">
 <header class="hero">
   <div class="hero-in">
     <div>
@@ -222,28 +268,52 @@ footer{border-top:1px solid rgba(255,255,255,.08)}
       <div class="notice">Please do not include passwords, payment-card numbers, Social Security numbers, or other sensitive personal information in this form.</div>
     </div>
 
-    <form class="form" action="https://formsubmit.co/srvcplat@gmail.com" method="POST">
+    <form class="form" id="callback-form" action="https://formsubmit.co/srvcplat@gmail.com" method="POST">
+      <div class="form-kicker"><span class="form-kicker-dot"></span> CONTACT OUR TEAM</div>
       <h3>Request a Callback</h3>
+      <p class="form-intro">Share a few details and we’ll follow up about your business technology needs.</p>
       <input type="hidden" name="_subject" value="New Micro Systems Services Website Lead">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="https://microsystemsservices.github.io/?submitted=1#contact">
       <input type="hidden" name="_url" value="https://microsystemsservices.github.io/">
+      <input type="hidden" name="_replyto" value="">
       <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
 
       <div class="field"><label for="name">Full name</label><input id="name" name="name" required autocomplete="name" placeholder="Your name"></div>
       <div class="field"><label for="email">Business email</label><input id="email" name="email" type="email" required autocomplete="email" placeholder="you@company.com"></div>
-      <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" required autocomplete="tel" placeholder="Your phone number"></div>
+      <div class="field"><label for="phone">Phone number</label><input id="phone" name="phone" type="tel" required autocomplete="tel" inputmode="tel" minlength="7" maxlength="30" placeholder="Your phone number"></div>
       <div class="field"><label for="service">Service needed</label><select id="service" name="service"><option value="General technology inquiry">General technology inquiry</option><option>Network assistance</option><option>Systems maintenance</option><option>Security configuration</option><option>Software assistance</option><option>Technical troubleshooting</option><option>Remote business support</option></select></div>
-      <div class="field"><label for="message">Briefly describe your requirement</label><textarea id="message" name="message" placeholder="Tell us what you need help with"></textarea></div>
-      <button class="submit" type="submit">REQUEST CALLBACK</button>
+      <div class="field"><label for="message">Briefly describe your requirement <span class="optional">(optional)</span></label><textarea id="message" name="message" maxlength="2000" placeholder="Tell us what you need help with"></textarea></div>
+      <button class="submit" type="submit"><span>REQUEST CALLBACK</span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <p id="form-status" class="form-status" role="status" aria-live="polite" hidden>Thank you. Your request has been submitted.</p>
       <p class="privacy">By submitting this form, you are asking Micro Systems Services to contact you about your inquiry. Do not submit sensitive personal or financial information through this form.</p>
     </form>
   </div>
 </section>
+</main>
 
 <footer>
   © 2026 Micro Systems Services · Business IT &amp; Technology Services
   <div class="footerlinks"><a href="mailto:srvcplat@gmail.com">Email</a> · <a href="tel:+14255599290">Call</a> · <a href="#services">Services</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></div>
 </footer>
+<script>
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var status = document.getElementById('form-status');
+  if (params.get('submitted') === '1' && status) {
+    status.hidden = false;
+    status.textContent = 'Thank you — your request was submitted. If you do not hear back, please call or email us directly.';
+    status.scrollIntoView({behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center'});
+    window.history.replaceState({}, document.title, window.location.pathname + '#contact');
+  }
+  var form = document.getElementById('callback-form');
+  if (form) {
+    form.addEventListener('submit', function(){
+      var button = form.querySelector('button[type="submit"]');
+      if (button) { button.disabled = true; button.querySelector('span').textContent = 'SENDING REQUEST…'; }
+    });
+  }
+})();
+</script>
 </body>
 </html>
