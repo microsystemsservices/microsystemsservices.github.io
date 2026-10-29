@@ -55,6 +55,37 @@ footer{background:#050e1a;color:#aebdca;padding:30px 20px;text-align:center;line
 @media(max-width:680px){.top{display:flex;flex-direction:column;text-align:center;gap:7px;padding:12px 16px;font-size:12px}.nav{padding:15px 20px}.navlinks{gap:14px;font-size:12px}.brand{font-size:15px}.brand small{font-size:8px;letter-spacing:1.5px}.hero{padding:58px 20px 64px}.hero-in,.contactbox{grid-template-columns:1fr}.hero-in{gap:34px}h1{font-size:clamp(40px,11vw,56px);letter-spacing:-1.8px}.hero p{font-size:16px}.callnum{font-size:clamp(24px,7vw,30px)}.section{padding:58px 20px}.grid,.steps{grid-template-columns:1fr;gap:14px}.step{margin-top:12px}.form{padding:24px 20px}.footerlinks a{display:inline-block;margin:4px 6px}}
 @media(max-width:380px){.navlinks{gap:10px}.navlinks a{font-size:11px}.brand{font-size:13px}.top div{overflow-wrap:anywhere}.btn{padding:13px 15px;font-size:13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+
+/* Premium visual polish */
+:root{--electric:#66e3dc;--violet:#8b9cff;--glass:rgba(255,255,255,.075)}
+.brand{display:flex;align-items:center;gap:12px}
+.brandmark{width:43px;height:43px;flex:0 0 43px;display:grid;place-items:center;border-radius:13px;color:#eaffff;background:linear-gradient(145deg,#0d9f9b,#18527b);box-shadow:inset 1px 1px 0 rgba(255,255,255,.5),0 8px 18px rgba(14,159,154,.2)}
+.brandmark svg{width:27px;height:27px}
+.hero{isolation:isolate}
+.hero:before{content:"";position:absolute;z-index:-1;inset:0;background:linear-gradient(115deg,transparent 25%,rgba(102,227,220,.045) 25.2%,transparent 25.7%,transparent 60%,rgba(139,156,255,.07) 60.2%,transparent 60.7%);pointer-events:none}
+.hero-in>div:first-child{position:relative}
+.hero-in>div:first-child:before{content:"";display:block;width:48px;height:4px;border-radius:8px;background:linear-gradient(90deg,var(--electric),var(--violet));margin-bottom:22px;box-shadow:0 0 22px rgba(102,227,220,.45)}
+.hero .eyebrow{display:inline-flex;padding:9px 12px;border:1px solid rgba(154,230,223,.24);border-radius:999px;background:rgba(154,230,223,.08);letter-spacing:1.5px}
+.call{position:relative;overflow:hidden}
+.call:before{content:"";position:absolute;right:-55px;top:-70px;width:190px;height:190px;border-radius:50%;background:radial-gradient(circle,rgba(102,227,220,.22),transparent 68%);pointer-events:none}
+.call:after{content:"";position:absolute;left:-70px;bottom:-115px;width:210px;height:210px;border:1px solid rgba(255,255,255,.1);border-radius:50%;box-shadow:0 0 0 22px rgba(255,255,255,.025),0 0 0 44px rgba(255,255,255,.018);pointer-events:none}
+.call>*{position:relative;z-index:1}
+.callnum{color:#d7fffb;text-shadow:0 0 24px rgba(102,227,220,.14)}
+.card{position:relative;overflow:hidden;transform-style:preserve-3d}
+.card:before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--teal),var(--cyan),var(--violet));opacity:0;transition:opacity .22s}
+.card:hover:before{opacity:1}
+.service-icon{width:52px;height:52px;display:grid;place-items:center;margin-bottom:23px;border-radius:16px;color:#087f7b;background:linear-gradient(145deg,#e6fbf8,#eaf0ff);border:1px solid rgba(14,159,154,.12);box-shadow:inset 1px 1px 0 #fff,0 8px 18px rgba(19,76,110,.07)}
+.service-icon svg{width:25px;height:25px;stroke:currentColor}
+.card h3{display:flex;align-items:center;gap:8px}
+.step{position:relative;overflow:hidden;transition:transform .22s ease,box-shadow .22s ease}
+.step:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.step b{display:inline-flex;align-items:center;gap:9px}
+.step b:before{content:"";display:inline-block;width:22px;height:2px;background:linear-gradient(90deg,var(--teal),var(--violet));border-radius:2px}
+.form{border:1px solid rgba(255,255,255,.6);background:linear-gradient(150deg,#fff,#f7fbff)}
+.submit{box-shadow:0 9px 20px rgba(14,159,154,.18)}
+.notice{box-shadow:0 8px 22px rgba(0,0,0,.05)}
+@media(hover:hover){.card:hover{transform:translateY(-6px) perspective(900px) rotateX(.6deg);}}
+@media(max-width:680px){.brandmark{width:36px;height:36px;flex-basis:36px;border-radius:11px}.brandmark svg{width:23px;height:23px}.service-icon{width:47px;height:47px;margin-bottom:18px}}
 </style>
 </head>
 <body>
@@ -63,7 +94,7 @@ footer{background:#050e1a;color:#aebdca;padding:30px 20px;text-align:center;line
   <div><a href="mailto:srvcplat@gmail.com">srvcplat@gmail.com</a> &nbsp;|&nbsp; <a href="tel:+14255599290">Call Now: 1-(425)-559-9290</a></div>
 </div>
 <nav class="nav" aria-label="Main navigation">
-  <div class="brand">MICRO SYSTEMS SERVICES<small>BUSINESS TECHNOLOGY SOLUTIONS</small></div>
+  <div class="brand"><span class="brandmark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 23V9l7 8 4-5 4 5 7-8v14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 25h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><circle cx="16" cy="7" r="2" fill="#9AE6DF"/></svg></span><span>MICRO SYSTEMS SERVICES<small>BUSINESS TECHNOLOGY SOLUTIONS</small></span></div>
   <div class="navlinks"><a href="#services">Services</a><a href="#process">How It Works</a><a href="#contact">Contact</a></div>
 </nav>
 <header class="hero">
@@ -90,12 +121,12 @@ footer{background:#050e1a;color:#aebdca;padding:30px 20px;text-align:center;line
     <h2>Business IT &amp; Technology Services</h2>
     <p class="lead">Services can be tailored to your organization's technical requirements and delivered through remote business support where appropriate.</p>
     <div class="grid">
-      <div class="card"><h3>Network Assistance</h3><p>Business network diagnostics, connectivity and related technical requirements.</p></div>
-      <div class="card"><h3>Systems Maintenance</h3><p>Ongoing technical assistance for maintaining business systems and routine technology tasks.</p></div>
-      <div class="card"><h3>Security Configuration</h3><p>Assistance with security-related configuration and technology settings for business environments.</p></div>
-      <div class="card"><h3>Software Assistance</h3><p>Technical assistance with business software, configuration and troubleshooting.</p></div>
-      <div class="card"><h3>Technical Troubleshooting</h3><p>Structured troubleshooting for business technology issues and system-related problems.</p></div>
-      <div class="card"><h3>Remote Business Support</h3><p>Remote assistance for eligible business technology requirements, subject to service scope.</p></div>
+      <div class="card"><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="2.5" y="16" width="6" height="5" rx="1"/><rect x="15.5" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M5.5 16v-3h13v3"/></svg></div><h3>Network Assistance</h3><p>Business network diagnostics, connectivity and related technical requirements.</p></div>
+      <div class="card"><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1m8.6 8.6 2.1 2.1m0-12.8-2.1 2.1m-8.6 8.6-2.1 2.1"/><circle cx="12" cy="12" r="5"/><path d="m10 12 1.3 1.3L14.5 10"/></svg></div><h3>Systems Maintenance</h3><p>Ongoing technical assistance for maintaining business systems and routine technology tasks.</p></div>
+      <div class="card"><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 20 6v5c0 5-3.4 8.2-8 10-4.6-1.8-8-5-8-10V6l8-3Z"/><path d="m8.5 12 2.3 2.3 4.7-4.8"/></svg></div><h3>Security Configuration</h3><p>Assistance with security-related configuration and technology settings for business environments.</p></div>
+      <div class="card"><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m8 9-2 3 2 3m8-6 2 3-2 3m-3-7-2 8"/></svg></div><h3>Software Assistance</h3><p>Technical assistance with business software, configuration and troubleshooting.</p></div>
+      <div class="card"><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m16 16 4.5 4.5M11 7v4l2.5 1.5"/></svg></div><h3>Technical Troubleshooting</h3><p>Structured troubleshooting for business technology issues and system-related problems.</p></div>
+      <div class="card"><div class="service-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8m-4-4v4M7 9h10M7 12h6"/><circle cx="18" cy="18" r="3" fill="#e6fbf8"/></svg></div><h3>Remote Business Support</h3><p>Remote assistance for eligible business technology requirements, subject to service scope.</p></div>
     </div>
   </div>
 </section>
